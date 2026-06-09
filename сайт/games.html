@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>FindTeam — Игры</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo"> FindTeam</div>
+    <div class="nav-buttons">
+        <a href="index.html" class="btn btn-rules"> Главная</a>
+        <a href="rules.html" class="btn btn-rules"> Правила</a>
+        <a href="#" id="helpLink" class="btn btn-help"> Помощь</a>
+    </div>
+</header>
+
+<div class="container">
+    <div class="hero">
+        <h1>Выбери игру</h1>
+        <p>Нажми на игру и присоединяйся к чату</p>
+    </div>
+
+    <div class="games-page-list">
+        <a href="#" class="game-page-card" data-game="cs2">
+            <div class="game-icon"></div>
+            <h3>CS2</h3>
+            <p>Counter-Strike 2</p>
+            <span class="badge">Найти тиммейтов →</span>
+        </a>
+
+        <a href="#" class="game-page-card" data-game="dota2">
+            <div class="game-icon"></div>
+            <h3>Dota 2</h3>
+            <p>MOBA</p>
+            <span class="badge">Найти тиммейтов →</span>
+        </a>
+
+        <a href="#" class="game-page-card" data-game="brawl">
+            <div class="game-icon"></div>
+            <h3>Brawl Stars</h3>
+            <p>Мобильный экшен</p>
+            <span class="badge">Найти тиммейтов →</span>
+        </a>
+
+        <a href="#" class="game-page-card" data-game="nte">
+            <div class="game-icon"></div>
+            <h3>НТЕ</h3>
+            <p>китайская гача 2</p>
+            <span class="badge">Найти тиммейтов →</span>
+        </a>
+
+        <a href="#" class="game-page-card" data-game="genshin">
+            <div class="game-icon"></div>
+            <h3>Genshin Impact</h3>
+            <p>китайская гача 1</p>
+            <span class="badge">Найти тиммейтов →</span>
+        </a>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>FindTeam — здесь ты найдешь с кем поиграть</p>
+</footer>
+
+<script>
+    const CHAT = "https://t.me/ArturKalenbaev";
+    
+    const helpBtn = document.getElementById('helpLink');
+    if (helpBtn) {
+        helpBtn.href = CHAT;
+        helpBtn.target = "_blank";
+    }
+
+    const chatLinks = {
+        cs2: "https://t.me/cs2_teammates",
+        dota2: "https://t.me/dota2_teammates",
+        brawl: "https://t.me/brawlstars_team",
+        nte: "https://t.me/NTEforum",
+        genshin: "https://t.me/genshin_coop"
+    };
+
+    const gameCards = document.querySelectorAll('.game-page-card');
+    gameCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+            const game = this.getAttribute('data-game');
+            const url = chatLinks[game];
+            if (url) {
+                window.open(url, '_blank');
+            } else {
+                alert('Ссылка на чат пока не добавлена');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

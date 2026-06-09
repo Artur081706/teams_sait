@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>FindTeam — ищем тиммейтов</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo"> FindTeam</div>
+    <div class="nav-buttons">
+        <a href="rules.html" class="btn btn-rules"> Правила</a>
+        <a href="#" id="helpLink" class="btn btn-help"> Помощь</a>
+    </div>
+</header>
+
+<div class="container">
+    <div class="hero">
+        <h1>Найди тиммейтов для игр</h1>
+        <p> Играй вместе, побеждай легче</p>
+    </div>
+
+    <div class="cards">
+        <div class="card" onclick="window.location.href='games.html'">
+            <div class="card-icon"></div>
+            <h3>Поиск по играм</h3>
+            <p>Выбери игру и найди напарников</p>
+            <span class="badge">Выбрать игру →</span>
+        </div>
+
+<div class="card" onclick="window.location.href='top-games.html'">
+    <div class="card-icon"></div>
+    <h3>Популярные игры</h3>
+    <p>Топ игр прямо сейчас</p>
+    <span class="badge">Смотреть топ →</span>
+</div>
+
+<script>
+    const CHAT = "https://t.me/ArturKalenbaev";
+    const helpBtn = document.getElementById('helpLink');
+    if (helpBtn) {
+        helpBtn.href = MY_CHAT_LINK;
+        helpBtn.target = "_blank";
+    }
+</script>
+
+</body>
+</html>
